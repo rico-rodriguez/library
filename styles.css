@@ -1,0 +1,5 @@
+input:checked ~ .radio {
+    color:white;
+    background-color: #2563eb;
+    border: 1px rgba(0, 0, 0, 0.082) solid;
+  }
