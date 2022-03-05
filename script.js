@@ -1,5 +1,4 @@
 let myLibrary = [];
-
 class Book {
   constructor(bookName, author, pages, read) {
     this.bookName = bookName
@@ -53,33 +52,55 @@ function sendInfo() {
     alertBox.classList.remove("hidden");
       return false;
   } else {
+    displayBook()
+  }
+} 
+//Push example book into Array
+myLibrary.push(["Call Sign Chaos", 'James Mattis', '1775', 'Yes']);
+function displayBook() {
+  for (let i = 0; i < myLibrary.length; i++) { 
   //If form is filled out, create a div in the right section with Tailwind styling applied and variable text filled out.
-  tag = document.createElement("div");
-  tag.className = 'relative flex flex-col items-center justify-between col-span-4 px-8 py-12 space-y-4 overflow-hidden bg-gray-100 rounded-lg';
+  tag = document.createElement("book" + (myLibrary.length)); }
+  tag.className = 
+  'div relative flex flex-col items-center justify-between col-span-4 px-8 py-12 space-y-4 overflow-hidden bg-gray-100 rounded-lg';
 
   tag.innerHTML = 
   `
-  <h4 id="book1" class="text-xl font-medium text-gray-700">
+  <h4 id="book=" class="text-xl font-medium text-gray-700">
+  <span class="absolute top-0 bottom-0 right-3 px-4 py-3">
+  <svg type="button" class="removeButton absolute fill-current h-4 w-4 text-black-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
+</span>
   Book title: ${title} <br> 
   Author name: ${author} <br>
   Pages: ${pages} <br>
   Read: ${read}
   </h4>
-
   `;
-  document.getElementById('bookList').appendChild(tag);
+  let newBook = document.getElementById('bookList').appendChild(tag);
+  myLibrary.push([title, author, pages, read]);
+  localStorage.setItem(newBook, myLibrary);
+  // image = document.getElementById('output');
   alertBox.classList.add("hidden");
+}
 
-}
-}
-//close the alert when pressing the 'x' button
+//Closing the alert box
 function closeButton() {
   alertBox = document.getElementById("alertBox");
   alertBox.classList.toggle("hidden");
-} 
+}
+// Add DYNAMIC click event to class .deleteItem
+$(document).on("click", ".removeButton", function() {
+  // Move up DOM tree until first incidence of .item-wrapper and remove
+  $(this).closest(".div").remove();
+});
+
+
 // Upload Image
 
-var loadFile = function(event) {
-	var image = document.getElementById('output');
-	image.src = URL.createObjectURL(event.target.files[0]);
-};
+// for (let i = 0; i < myLibrary.length; i++) { 
+// let loadFile = function(event) {
+// 	let image = document.getElementById('output');
+// 	image.src = URL.createObjectURL(event.target.files[0]);
+//   return image
+// };
+// }

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Library</title>
 </head>
 <body>
@@ -77,11 +78,11 @@
 
                 <input type="text" id="author" name="author" class="block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none" placeholder="Author">
                 
-                <input type="number" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" id="pages" name="pages" class="block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none" placeholder="Pages read">
-
-                <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
+                <input type="number" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" id="pages" name="pages" class="block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none" placeholder="How many pages?">
+                <!-- Image uploading -->
+                <!-- <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
                 <p><label for="file" style="cursor: pointer;">Upload Image (optional)</label></p><br>
-                <p><img id="output" width="200" /></p>
+                <p><img id="output" height="auto" width="200" /></p> -->
 
                 <!-- Have you read this book? -->
                 <p class="">Have you read this book?</p>
@@ -102,9 +103,19 @@
             </div>
         </div>
 <!-- LIBRARY BOOKS WILL BE KEPT AFTER HERE -->
-        <p class="mt-8 text-2xl text-center text-gray-600">Your Books.</p>
+        <p class="mt-8 text-2xl text-center text-gray-600">Your Books</p>
         <div id="bookList" class="grid grid-cols-4 gap-8 mt-10 sm:grid-cols-8 lg:grid-cols-12 sm:px-8 xl:px-0">
-
+            <book0 id="bookRemove" class="div relative flex flex-col items-center justify-between col-span-4 px-8 py-12 space-y-4 overflow-hidden bg-gray-100 rounded-lg">
+            <h4 id="bookCard" class="text-xl font-medium text-gray-700">
+                <span class="absolute top-0 bottom-0 right-3 px-4 py-3">
+                <svg type="button" onclick="" class="removeButton absolute fill-current h-4 w-4 text-black-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
+              </span>
+                Book title: Call Sign Chaos <br> 
+                Author name: James Mattis <br>
+                Pages: 1775 <br>
+                Read: Yes
+                </h4>
+            </book>
         </div>
     </div>
 </section>
