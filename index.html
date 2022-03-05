@@ -62,18 +62,26 @@
     <div class="container max-w-6xl mx-auto">
         <h2 class="text-4xl font-bold tracking-tight text-center mb-2">Add your books!</h2>
         <div class="w-auto">
-            <div class="relative z-10 h-auto p-8 py-10 overflow-hidden bg-gray-100 border-b-2 border-gray-300 rounded-lg shadow-lg px-7">
+            <div class="hiddenrelative z-10 h-auto p-8 py-10 overflow-hidden bg-gray-100 border-b-2 border-gray-300 rounded-lg shadow-lg px-7">
+                <!-- Alert box -->
+                <div class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" id="alertBox" role="alert">
+                    <strong class="font-bold">Stop!</strong>
+                    <span class="block sm:inline">You have to fill out the entire form.</span>
+                    <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+                      <svg id="closeButton" onclick="closeButton()" class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
+                    </span>
+                  </div>
                 <!-- Input fields  -->
             <form id="demoForm" >
                 <input type="text" id="title" name="title"required="required" class="block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none" placeholder="Book Title">
 
                 <input type="text" id="author" name="author" class="block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none" placeholder="Author">
                 
-                <input type="number" id="pages" name="pages" class="block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none" placeholder="Pages read">
+                <input type="number" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" id="pages" name="pages" class="block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none" placeholder="Pages read">
 
                 <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
-<p><label for="file" style="cursor: pointer;">Upload Image</label></p>
-<p><img id="output" width="200" /></p>
+                <p><label for="file" style="cursor: pointer;">Upload Image (optional)</label></p><br>
+                <p><img id="output" width="200" /></p>
 
                 <!-- Have you read this book? -->
                 <p class="">Have you read this book?</p>

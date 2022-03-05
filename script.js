@@ -40,14 +40,20 @@ function getFormInfo() {
 }
 
 // Send form info to a card and reset the info
-let tag
-let text
-let x
+let tag;
+let text;
+let x;
 function sendInfo() {
+  //Dont allow form submission if fields are empty. (prevent useless blank DIV's)
   x = document.getElementById("title").value;
-  if (x == "") {
+  y = document.getElementById("author").value;
+  z = document.getElementById("pages").value;
+  alertBox = document.getElementById("alertBox");
+  if (x == "" || y == "" || z == "") {
+    alertBox.classList.remove("hidden");
       return false;
   } else {
+  //If form is filled out, create a div in the right section with Tailwind styling applied and variable text filled out.
   tag = document.createElement("div");
   tag.className = 'relative flex flex-col items-center justify-between col-span-4 px-8 py-12 space-y-4 overflow-hidden bg-gray-100 rounded-lg';
 
@@ -62,6 +68,18 @@ function sendInfo() {
 
   `;
   document.getElementById('bookList').appendChild(tag);
-  // document.getElementById("book1").innerHTML = `Book title: ${title}`;
+  alertBox.classList.add("hidden");
+
 }
 }
+//close the alert when pressing the 'x' button
+function closeButton() {
+  alertBox = document.getElementById("alertBox");
+  alertBox.classList.toggle("hidden");
+} 
+// Upload Image
+
+var loadFile = function(event) {
+	var image = document.getElementById('output');
+	image.src = URL.createObjectURL(event.target.files[0]);
+};
