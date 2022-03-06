@@ -1,4 +1,7 @@
 ## Live: https://rico-library.netlify.app/
+
+![Website video](https://user-images.githubusercontent.com/97664519/156912857-92a1a6b9-2f3c-45a2-a00e-daa4ed153eaf.gif)
+
 # Library template created using:
 
 - HTML
@@ -18,5 +21,3 @@
 # To Do:
 - Add database support (Or local storage)
 - Finish registration and login functionality
-
-![Website video](https://user-images.githubusercontent.com/97664519/156912857-92a1a6b9-2f3c-45a2-a00e-daa4ed153eaf.gif)
