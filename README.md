@@ -21,3 +21,4 @@
 # To Do:
 - Add database support (Or local storage)
 - Finish registration and login functionality
+- Clean up HTML and Javascript
