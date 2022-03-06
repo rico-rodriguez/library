@@ -126,7 +126,8 @@
         <a href="#library" rel="" id="library" class="anchorLink"></a>
         <div class="testBlock" id="testBlock" ></div>
         <div id="bookList" class="grid grid-cols-4 gap-8 mt-10 sm:grid-cols-8 lg:grid-cols-12 sm:px-8 xl:px-0">
-            <div id="bookRemove" class="div relative flex flex-col items-center justify-between col-span-4 px-8 py-12 space-y-4 overflow-hidden bg-gray-100 rounded-lg">
+            <!-- Example book -->
+            <div id="bookRemove" class="div  mx-5 drop-shadow-lg relative flex flex-col items-center justify-between col-span-4 px-8 py-12 space-y-4 overflow-hidden bg-gray-100 rounded-lg">
             <h4 id="bookCard" class="text-xl font-medium text-gray-700">
                 <span class="absolute top-0 bottom-0 right-3 px-4 py-3">
                 <svg type="button" onclick="" class="removeButton absolute fill-current h-4 w-4 text-black-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
@@ -136,7 +137,12 @@
                 <p class="text-center text-xl, font-bold">Pages:</p><p class="text-center">1775</p><hr>
 
                 <p class="text-center text-center text-xl, font-bold">Read:</p><p class="changeRead text-center" id="changeRead">
-                <button class="changeReadButton bg-blue-500 hover:bg-blue-700 text-white  py-0 px-10 rounded">Yes</button></p>
+                <button style=" 
+                margin: auto;
+                width: 80%;
+                max-width: 150px;
+                min-width: 150px;
+                margin-top: 0px;" class=" changeReadButton bg-blue-500 hover:bg-blue-700 text-white  py-0 px-10 rounded">Yes</button></p>
                 </h4>
             </div>
         </div>

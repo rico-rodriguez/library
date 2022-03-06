@@ -65,7 +65,7 @@ function displayBook() {
 
 
   tag.className = 
-  'div relative flex flex-col items-center justify-between col-span-4 px-8 py-12 space-y-4 overflow-hidden bg-gray-100 rounded-lg';
+  'div drop-shadow-lg mx-5 relative flex flex-col items-center justify-between col-span-4 px-8 py-12 space-y-4 overflow-hidden bg-gray-100 rounded-lg';
   tag.innerHTML = 
   `
   <h4 id="bookCard" class="text-xl font-medium text-gray-700">
@@ -77,10 +77,20 @@ function displayBook() {
 <p class="text-center text-xl, font-bold">Pages:</p><p class="text-center">${pages}</p><hr>
 <p class="text-center text-center text-xl, font-bold">Read:</p><p class="changeRead text-center" id="changeRead">`
 if (read === "Yes") {
-  tag.innerHTML += `<button style="margin-top: 0px;" class="changeReadButton bg-blue-500 hover:bg-blue-700 text-white py-0 px-10 rounded font-medium text-xl m-0 mt-0">Yes</button></p>
+  tag.innerHTML += `<button style=" 
+  margin: auto;
+  width: 50%;
+  max-width: 150px;
+  min-width: 150px;
+  margin-top: 0px;" class="changeReadButton bg-blue-500 hover:bg-blue-700  text-white py-0 px-10 rounded font-medium text-xl mt-0">Yes</button></p>
   </h4>`
 } else if (read ==="No") {
-  tag.innerHTML += `<button style="margin-top: 0px;" class="changeReadButton bg-blue-500 hover:bg-blue-700 text-white py-0 px-10 rounded font-medium text-xl m-0 mt-0">No</button></p>
+  tag.innerHTML += `<button style=" 
+  margin: auto;
+  width: 50%;
+  max-width: 150px;
+  min-width: 150px;
+  margin-top: 0px;" class="changeReadButton bg-blue-500 hover:bg-blue-700  text-white py-0 px-10 rounded font-medium text-xl mt-0">No</button></p>
   </h4>`
 };
   myLibrary.push([title, author, pages, read])
