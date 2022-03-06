@@ -57,7 +57,10 @@ input[type=text], input[type=password] {
     float: right;
     padding-top: 16px;
   }
-  
+  .loginButton {
+    display: block;
+  }
+
   /* The Modal (background) */
   .modal {
     display: none; /* Hidden by default */

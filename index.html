@@ -10,32 +10,7 @@
     <title>Library</title>
 </head>
 <body>
-<!-- Login Modal  -->
-<div id="id01" class="modal">
-  <form class="bg-gray-200 w-96 h-auto rounded-lg pt-8 pb-8 px-8 flex flex-col items-center modal-content animate" action="/#" method="post">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <label class="font-light text-4xl mb-4">The<span class="font-bold">Hub</span></label>
-    </div>
 
-    <div class="container">
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
-
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-        
-      <button type="submit">Login</button>
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label><hr>
-      <button class="w-full h-12 rounded-lg bg-red-600 text-gray-200 uppercase font-semibold hover:bg-red-700 text-gray-100 transition mb-4">Sign with Google</button>
-      <button class="w-full h-12 rounded-lg bg-blue-600 text-gray-200 uppercase font-semibold hover:bg-blue-700 text-gray-100 transition mb-4">Sign with Facebook</button>
-      <button class="w-full h-12 rounded-lg bg-gray-800 text-gray-200 uppercase font-semibold hover:bg-gray-900 text-gray-100 transition mb-4">Sign with Github</button>
-    </div>
-  </form>
-</div>
-<!-- End login Modal  -->
 <!-- Section 1 -->
 <section class="relative w-full px-8 text-gray-700 bg-white body-font">
     <div class="container flex flex-col flex-wrap items-center justify-between py-5 mx-auto md:flex-row max-w-7xl">
@@ -68,8 +43,8 @@
             </a>
         </nav>
 
-        <div class="relative z-10 inline-flex items-center space-x-3 md:ml-5 lg:justify-end">
-            <a href="#" class="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-gray-600 whitespace-no-wrap bg-white border border-gray-200 shadow-sm hover:bg-gray-50 focus:outline-none focus:shadow-none rounded-lg" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">
+        <div id="loginButton" class="loginButton relative z-10 inline-flex items-center space-x-3 md:ml-5 lg:justify-end ">
+            <a href="#" class="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-gray-600 whitespace-no-wrap bg-white border border-gray-200 shadow-sm hover:bg-gray-50 focus:outline-none focus:shadow-none rounded-lg" onclick="document.getElementById('loginButton').style.display='none'; document.getElementById('id01').style.display='block'" " style="width:auto;">
                 Sign in
             </a>
             <span class="inline-flex rounded-md shadow-sm">
@@ -121,6 +96,32 @@
                 </div></form>
             </div>
         </div>
+        <!-- Login Modal  -->
+<div id="id01" class="modal">
+    <form class="bg-gray-200 w-96 h-auto rounded-lg pt-8 pb-8 px-8 flex flex-col items-center modal-content animate" action="/#" method="post">
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('loginButton').style.display='block'; document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <label class="font-light text-4xl mb-4">The<span class="font-bold">Hub</span></label>
+      </div>
+  
+      <div class="container">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required>
+  
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+          
+        <button type="submit">Login</button>
+        <label>
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label><hr>
+        <button class="w-full h-12 rounded-lg bg-red-600 text-gray-200 uppercase font-semibold hover:bg-red-700 text-gray-100 transition mb-4">Sign with Google</button>
+        <button class="w-full h-12 rounded-lg bg-blue-600 text-gray-200 uppercase font-semibold hover:bg-blue-700 text-gray-100 transition mb-4">Sign with Facebook</button>
+        <button class="w-full h-12 rounded-lg bg-gray-800 text-gray-200 uppercase font-semibold hover:bg-gray-900 text-gray-100 transition mb-4">Sign with Github</button>
+      </div>
+    </form>
+  </div>
+  <!-- End login Modal  -->
 <!-- LIBRARY BOOKS WILL BE KEPT AFTER HERE -->
         <p class="mt-8 text-2xl text-center text-gray-600">Your Books</p>
         <a href="#library" rel="" id="library" class="anchorLink"></a>
